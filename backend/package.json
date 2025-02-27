@@ -1,7 +1,10 @@
 {
   "dependencies": {
-    "fastify": "^4.27.0",
+    "@fastify/cors": "^10.1.0",
+    "diagnostics": "^2.0.2",
+    "fastify": "^5.2.1",
     "knex": "^3.1.0",
+    "lodash.debounce": "^4.0.8",
     "sqlite3": "^5.1.7"
   },
   "name": "backend",

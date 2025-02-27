@@ -1,20 +1,21 @@
-# Test Coding Assignment
+# Test Coding Assignment by Juan Ordosgoite
+
 
 # Assignment:
-Develop a simple web app allowing users to send emails. The app should have the following features:  
+It contains a simple web app allowing users to send emails. The app has the following features:  
 ## 1. Sidebar
-1. The main page should have a sidebar with a list of emails (Apple Mail style)
-2. When selecting an email from the sidebar, the selected email should be displayed on the right side of the screen
+1. The main page has a sidebar with a list of emails (similar to Apple Mail style)
+2. When selecting an email from the sidebar, the selected email is being displayed on the right side of the screen
 
 ## 2. Search bar
-1. The sidebar should contain a search bar at the top
-2. When typing text in the search bar, the list of emails in the sidebar should be filtered based on the search text
-   * We should do the filtering on the backend
-   * We should debounce the requests to the backend (i.e. wait for 500ms after the user stops typing before sending the request)
-   * The search should return results where either the `to`, `cc`, `bcc`, `subject`, or `subject` fields contain the search text
+1. The sidebar contains a search bar at the top
+2. When typing text in the search bar, the list of emails in the sidebar is being filtered based on the search text
+   * Filtering is being done on the backend
+   * It debounces requests to the backend (500ms after the user stops typing before sending the request)
+   * The search returns results where either the `to`, `cc`, `bcc`, `subject`, or `subject` fields contain the search text
 
 ## 3. Sending emails
-The main page should have a button to compose a new email (placed at the bottom right corner of the screen). The following fields should be present in the compose email form:
+The main page has a button to compose a new email (placed at the bottom right corner of the screen). The following fields should be present in the compose email form:
    * To
    * CC
    * BCC
@@ -23,12 +24,11 @@ The main page should have a button to compose a new email (placed at the bottom 
 
 
 # Notes:
-1. No need to actually send the email - it's enough to save it in the database
-2. Do not spend more than 1h on this assignment, just do as much as you can in that time
-3. Please remove the `.next` folder before sending the task
-4. Please remove the `dev.sqlite3` folder before sending the task
-5. Please remove the `node_modules` folders before sending the task
-6. Please remove any other ignored files before sending the task
+1. It's not sending the email actually - it's just saving it in the database
+3. `.next` folder was removed
+4. `dev.sqlite3` folder was removed
+5. `node_modules` folders was removed
+6. The axios dependency was added to facilitate data fetching from the UI to the backend.
 
 # Structure
 This is a monorepo. It has two folders:  

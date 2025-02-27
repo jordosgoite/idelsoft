@@ -33,6 +33,8 @@ const EmailsPage = () => {
     body: "",
   });
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
   useEffect(() => {
     fetchEmails();
   }, [searchText]);
@@ -41,8 +43,8 @@ const EmailsPage = () => {
     try {
       const response = await axios.get(
         searchText
-          ? `http://localhost:3001/emails?q=${searchText}`
-          : "http://localhost:3001/emails"
+          ? `${API_URL}/emails?q=${searchText}`
+          : `${API_URL}/emails`
       );
       setEmails(response.data);
     } catch (error) {
@@ -60,7 +62,7 @@ const EmailsPage = () => {
 
   const handleEmailSelect = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:3001/emails/${id}`);
+      const response = await axios.get(`${API_URL}/emails/${id}`);
       setSelectedEmail(response.data);
     } catch (error) {
       console.error(`Error fetching email ${id}:`, error);
@@ -83,7 +85,7 @@ const EmailsPage = () => {
 
   const handleSendEmail = async () => {
     try {
-      await axios.post("http://localhost:3001/emails", newEmail);
+      await axios.post(`${API_URL}/emails`, newEmail);
       fetchEmails();
       handleComposeClose();
     } catch (error) {

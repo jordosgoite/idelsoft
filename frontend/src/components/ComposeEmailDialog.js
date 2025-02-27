@@ -16,6 +16,8 @@ const ComposeEmailDialog = ({
   newEmail,
   onInputChange,
 }) => {
+  const isSendDisabled = !newEmail.to || !newEmail.subject || !newEmail.body;
+
   return (
     <Dialog
       open={open}
@@ -69,7 +71,7 @@ const ComposeEmailDialog = ({
         <Button onClick={onClose} color="primary">
           Cancel
         </Button>
-        <Button onClick={onSend} color="primary">
+        <Button onClick={onSend} color="primary" disabled={isSendDisabled}>
           Send
         </Button>
       </DialogActions>
